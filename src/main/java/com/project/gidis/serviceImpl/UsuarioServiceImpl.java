@@ -5,11 +5,12 @@ import com.project.gidis.entities.Usuario;
 import com.project.gidis.repositories.UsuarioRepository;
 import com.project.gidis.services.UsuarioService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
+import static com.project.gidis.util.Rol.DOCENTE;
 
 @Service
 @Transactional
@@ -25,6 +26,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public void guardarUsuario(Usuario usuario) {
+        usuario.setRol(DOCENTE);
         usuarioRepository.save(usuario);
     }
 

@@ -10,8 +10,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "proyectoDeInvestigacion")
-public class ProyectoDeInvestigacion {
+@Table(name = "proyectoInvestigacion")
+public class ProyectoInvestigacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

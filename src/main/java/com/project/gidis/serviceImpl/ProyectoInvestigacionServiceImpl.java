@@ -44,7 +44,7 @@ public class ProyectoInvestigacionServiceImpl implements ProyectoInvestigacionSe
     }
 
     @Override
-    public Articulo obtenerArticuloPorId(Long id) {
-        return articuloRepository.findById(id).get();
+    public ProyectoInvestigacion obtenerProyectoInvestigacionPorId(Long id) {
+        return proyectoInvestigacionRepository.findById(id).get();
     }
 }

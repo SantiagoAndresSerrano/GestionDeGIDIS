@@ -10,5 +10,5 @@ import lombok.*;
 public class LibroRequestDto {
 
     private String certificadoCreditos;
-    private String certificadoAvala;
+    private String certificadoInstitucionAvala;
 }

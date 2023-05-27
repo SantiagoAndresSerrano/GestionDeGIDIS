@@ -8,7 +8,7 @@ import java.util.List;
 public interface CapituloLibroService {
 
     List<CapituloLibro> obtenerCapitulosLibros();
-    void guardarUsuario(CapituloLibro capituloLibro);
+    void guardarCapituloLibro(CapituloLibro capituloLibro);
     void borrarCapituloLibroPorId(Long id);
     void editarCapituloLibro(Long id, CapituloLibroRequestDto capituloLibroDto);
     CapituloLibro obtenerCapituloLibroPorId(Long id);

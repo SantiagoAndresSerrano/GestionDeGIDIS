@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/articulo")
+@RequestMapping("/api/v1/proyectoInvestigacion")
 @RequiredArgsConstructor
 public class ProyectoInvestigacionController {
 
@@ -48,8 +48,8 @@ public class ProyectoInvestigacionController {
     public ResponseEntity<ProyectoInvestigacion> obtenerProyectoInvestigacionPorId(
             @PathVariable(name = "id") Long id
     ){
-        ProyectoInvestigacion articulo = proyectoInvestigacionService.obtenerProyectoInvestigacionPorId(id);
-        return ResponseEntity.ok(articulo);
+        ProyectoInvestigacion proyectoInvestigacion = proyectoInvestigacionService.obtenerProyectoInvestigacionPorId(id);
+        return ResponseEntity.ok(proyectoInvestigacion);
 
     }
 

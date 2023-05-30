@@ -6,6 +6,7 @@ import com.project.gidis.entities.Usuario;
 import com.project.gidis.repositories.UsuarioRepository;
 import com.project.gidis.services.UsuarioService;
 import lombok.RequiredArgsConstructor;
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,9 +27,13 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public void guardarUsuario(Usuario usuario) {
+    public void guardarUsuario(Usuario usuario) throws Exception {
         usuario.setRol(DOCENTE);
-        usuarioRepository.save(usuario);
+        try {
+            usuarioRepository.save(usuario);
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
     @Override

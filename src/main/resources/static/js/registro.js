@@ -15,7 +15,17 @@ async function registro() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    });
-    alert("Usuario Registrado");
-    window.location.href = '../index.html';
+    }).then(res => res.json())
+        .then(data => {
+            if (data.guardo) {
+                alert("Usuario Registrado");
+                window.location.href = '../index.html';
+            }
+            else
+                alert("No se registró");
+        }).catch( err => {
+            alert("Error de registro.");
+        });
+
+
 }

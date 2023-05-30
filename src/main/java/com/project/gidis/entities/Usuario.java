@@ -7,14 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -32,9 +26,13 @@ public class Usuario {
     private String apellido;
     @Column(unique = true, length = 15)
     private String documento;
+    @Column(unique = true)
     private String email;
     private String clave;
     private String telefono;
     @Enumerated(value = EnumType.STRING)
     private Rol rol;
+    @ManyToMany
+    @JoinTable (name = "usuario_articulo", joinColumns = @JoinColumn(name = "articulo_id"), inverseJoinColumns = @JoinColumn(name = "usuario_id"))
+    private Set<Articulo> articulo;
 }

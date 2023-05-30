@@ -16,8 +16,11 @@ async function login() {
         .then(data => {
             if(data.accedio)
                 window.location.href = 'html/inicio.html';
-            else
+            else{
+                window.alert("Verifique sus credenciales!")
                 window.location.href = 'index.html';
+            }
+
         });
 
 

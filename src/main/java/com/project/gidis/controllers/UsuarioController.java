@@ -2,6 +2,7 @@ package com.project.gidis.controllers;
 
 import com.project.gidis.dto.LoginRequestDto;
 import com.project.gidis.dto.LoginResponseDto;
+import com.project.gidis.dto.RegistroResponseDto;
 import com.project.gidis.dto.UsuarioRequestDto;
 import com.project.gidis.entities.Usuario;
 import com.project.gidis.serviceImpl.UsuarioServiceImpl;
@@ -32,9 +33,14 @@ public class UsuarioController {
     }
 
     @PostMapping("/guardar")
-    public ResponseEntity<Void> guardarUsuario(@RequestBody Usuario usuario) {
-        usuarioService.guardarUsuario(usuario);
-        return new ResponseEntity(HttpStatus.CREATED);
+    public ResponseEntity<RegistroResponseDto> guardarUsuario(@RequestBody Usuario usuario) {
+        try {
+            usuarioService.guardarUsuario(usuario);
+            return new ResponseEntity(new RegistroResponseDto(true),HttpStatus.CREATED);
+        } catch (Exception e){
+            return new ResponseEntity(new RegistroResponseDto(false),HttpStatus.BAD_REQUEST);
+        }
+
     }
 
     @GetMapping("/borrar/{id}")
@@ -72,5 +78,5 @@ public class UsuarioController {
 
     }
 
-  
+
 }

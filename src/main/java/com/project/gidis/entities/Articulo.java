@@ -3,6 +3,7 @@ package com.project.gidis.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -28,5 +29,6 @@ public class Articulo {
     private String medioDivulgacion;
     private String coautores;
     private String idioma;
-
+    @ManyToMany (mappedBy = "articulo")
+    private Set<Usuario> usuario;
 }

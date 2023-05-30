@@ -9,7 +9,7 @@ import java.util.List;
 public interface UsuarioService {
 
     List<Usuario> obtenerUsuarios();
-    void guardarUsuario(Usuario usuario);
+    void guardarUsuario(Usuario usuario) throws Exception;
     void borrarUsuarioPorId(Long id);
     void editarUsuario(Long id, UsuarioRequestDto usuarioDto);
     Usuario obtenerUsuarioPorId(Long id);

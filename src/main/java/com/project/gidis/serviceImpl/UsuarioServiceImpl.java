@@ -1,5 +1,6 @@
 package com.project.gidis.serviceImpl;
 
+import com.project.gidis.dto.LoginRequestDto;
 import com.project.gidis.dto.UsuarioRequestDto;
 import com.project.gidis.entities.Usuario;
 import com.project.gidis.repositories.UsuarioRepository;
@@ -48,5 +49,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario obtenerUsuarioPorId(Long id) {
         return usuarioRepository.findById(id).get();
+    }
+
+    @Override
+    public boolean loginUsuario(LoginRequestDto loginRequestDto) {
+        return usuarioRepository.existsUsuarioByEmailAndClave(loginRequestDto.getEmail(), loginRequestDto.getClave());
     }
 }

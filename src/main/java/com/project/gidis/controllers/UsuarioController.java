@@ -1,5 +1,7 @@
 package com.project.gidis.controllers;
 
+import com.project.gidis.dto.LoginRequestDto;
+import com.project.gidis.dto.LoginResponseDto;
 import com.project.gidis.dto.UsuarioRequestDto;
 import com.project.gidis.entities.Usuario;
 import com.project.gidis.serviceImpl.UsuarioServiceImpl;
@@ -59,5 +61,14 @@ public class UsuarioController {
 
     }
 
-    //public getbyid method
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponseDto> loginUsuario(
+            @RequestBody LoginRequestDto loginRequestDto
+    ) {
+       if (usuarioService.loginUsuario(loginRequestDto)) {
+           return ResponseEntity.ok(new LoginResponseDto(true));
+       }
+        return new ResponseEntity<> (new LoginResponseDto(false),HttpStatus.BAD_REQUEST);
+
+    }
 }

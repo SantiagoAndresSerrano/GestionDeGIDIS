@@ -3,6 +3,7 @@ package com.project.gidis.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -23,5 +24,8 @@ public class Libro {
     private String disciplina;
     private String certificadoCreditos;
     private String certificadoInstitucionAvala;
+
+    @ManyToMany (mappedBy = "libro")
+    private Set<Usuario> usuario;
 
 }

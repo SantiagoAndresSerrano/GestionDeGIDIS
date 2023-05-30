@@ -35,4 +35,8 @@ public class Usuario {
     @ManyToMany
     @JoinTable (name = "usuario_articulo", joinColumns = @JoinColumn(name = "articulo_id"), inverseJoinColumns = @JoinColumn(name = "usuario_id"))
     private Set<Articulo> articulo;
+
+    @ManyToMany
+    @JoinTable (name = "usuario_libro", joinColumns = @JoinColumn(name = "libro_id"), inverseJoinColumns = @JoinColumn(name = "usuario_id"))
+    private Set<Libro> libro;
 }

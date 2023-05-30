@@ -14,10 +14,8 @@ async function login() {
         body: JSON.stringify(data)
     }).then(res => res.json())
         .then(data => {
-            if(data.accedio){
-                console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            if(data.accedio)
                 window.location.href = 'html/inicio.html';
-            }
             else
                 window.location.href = 'index.html';
         });

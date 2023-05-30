@@ -16,7 +16,7 @@
     <div class="titulo">
       <img id="img" src="/img/logoUFPS.jpg" >
     </div>
-    <form id="formulario">
+    <form onsubmit="event.preventDefault(); login()">
       <label>Email</label>
       <div class="row">
         <i class="fa fa-user"></i>
@@ -32,12 +32,13 @@
       <!--<button onclick="login()"  class="btn btn-primary" >Ingresar</button>-->
 
       <br>
-      <a onclick="login()" class="link-dark" href="#" id="login"> Ingresar</a>
-      <!--{{#if error}}-->
+      <button type="submit" class="btn btn-primary" value="Ingresar" id="ingresar" >Ingresar</button>
+      <!--<a onclick="login()" class="link-dark" href="#" id="login"> Ingresar</a>
+      {{#if error}}-->
       <!--<p class="text-red-500 font-bold text-lg my-3">{{error}}</p>-->
       <!--{{/if}}-->
     </form>
-    <a class="link-dark" href="registro" id="link"> Regístrate</a>
+    <a class="link-dark" href="html/registro.html" id="link"> Regístrate</a>
   </div>
 </div>
 

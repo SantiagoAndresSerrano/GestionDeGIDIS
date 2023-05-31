@@ -1,23 +1,24 @@
 async function listarArticulos(){
-    const request = await fetch('api/v1/usuario/articulo', {
+    let data = {};
+    const request = await fetch('/api/v1/articulo', {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
-    }).then(res => res.json())
-        .then(data => {
-            if(data == null){
+    })
+            const res = await request.json();
+            if(!res){
                 document.getElementById("tbody").innerHTML = "<td>No hay artículos disponibles</td>"
             }
             else{
+                console.log(res)
                 document.getElementById("tbody").innerHTML = ""
-                for (let i = 0; i < data.length; i++){
-                    let titulo = data[i].titulo
-                    let ciudad = data[i].ciudad
-                    let coautores = data[i].coautores
-                    let digitalObjectIdentifierDOI = data[i].digitalObjectIdentifierDOI
+                for (let i = 0; i < res.length; i++){
+                    let titulo = res[i].titulo
+                    let ciudad = res[i].ciudad
+                    let coautores = res[i].coautores
+                    let digitalObjectIdentifierDOI = res[i].digitalObjectIdentifierDOI
 
                     document.getElementById("tbody").innerHTML +=
                         ` <tr>
@@ -31,7 +32,6 @@ async function listarArticulos(){
 
             }
 
-        });
 }
 
 listarArticulos()

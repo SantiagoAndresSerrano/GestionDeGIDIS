@@ -23,8 +23,13 @@ public class ArticuloServiceImpl implements ArticuloService {
     }
 
     @Override
-    public void guardarArticulo(Articulo articulo) {
-        articuloRepository.save(articulo);
+    public void guardarArticulo(Articulo articulo) throws Exception{
+        try {
+            articuloRepository.save(articulo);
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+
     }
 
     @Override

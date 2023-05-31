@@ -17,6 +17,7 @@ public class Articulo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String titulo;
     private String paginaInicial;
     private String paginaFinal;
     private String nombreRevista;

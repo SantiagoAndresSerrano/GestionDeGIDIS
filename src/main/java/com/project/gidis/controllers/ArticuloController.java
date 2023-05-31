@@ -1,6 +1,7 @@
 package com.project.gidis.controllers;
 
 import com.project.gidis.dto.ArticuloRequestDto;
+import com.project.gidis.dto.RegistroResponseDto;
 import com.project.gidis.entities.Articulo;
 import com.project.gidis.serviceImpl.ArticuloServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -24,9 +25,13 @@ public class ArticuloController {
     }
 
     @PostMapping("/guardar")
-    public ResponseEntity<Void> guardarArticulo(@RequestBody Articulo articulo) {
-        articuloService.guardarArticulo(articulo);
-        return new ResponseEntity(HttpStatus.CREATED);
+    public ResponseEntity<RegistroResponseDto> guardarArticulo(@RequestBody Articulo articulo) {
+        try {
+            articuloService.guardarArticulo(articulo);
+            return new ResponseEntity(new RegistroResponseDto(true),HttpStatus.CREATED);
+        } catch (Exception e){
+        return new ResponseEntity(new RegistroResponseDto(false),HttpStatus.BAD_REQUEST);
+        }
     }
 
     @GetMapping("/borrar/{id}")

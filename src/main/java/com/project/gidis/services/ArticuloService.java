@@ -8,7 +8,7 @@ import java.util.List;
 public interface ArticuloService {
 
     List<Articulo> obtenerArticulos();
-    void guardarArticulo(Articulo articulo);
+    void guardarArticulo(Articulo articulo) throws Exception;
     void borrarArticuloPorId(Long id);
     void editarArticulo(Long id, ArticuloRequestDto articuloDto);
     Articulo obtenerArticuloPorId(Long id);

@@ -52,11 +52,11 @@ async function listarProyectos(){
 }
 
 function verPro(id){
-    window.location.href=`verPro.html?id=${id}`
+    window.location.href=`verProyecto.html?id=${id}`
 }
 
 function editarPro(id){
-    window.location.href=`editarPro.html?id=${id}`
+    window.location.href=`editarProyecto.html?id=${id}`
 }
 
 listarProyectos()

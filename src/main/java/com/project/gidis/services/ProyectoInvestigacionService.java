@@ -11,5 +11,7 @@ public interface ProyectoInvestigacionService {
     void guardarProyectoInvestigacion(ProyectoInvestigacion proyectoInvestigacion);
     void borrarProyectoInvestigacionPorId(Long id);
     void editarProyectoInvestigacion(Long id, ProyectoInvestigacionRequestDto proyectoInvestigacionDto);
+
+    void editProyectoInvestigacion(Long id, ProyectoInvestigacionRequestDto proyectoInvestigacionDto);
     ProyectoInvestigacion obtenerProyectoInvestigacionPorId(Long id);
 }

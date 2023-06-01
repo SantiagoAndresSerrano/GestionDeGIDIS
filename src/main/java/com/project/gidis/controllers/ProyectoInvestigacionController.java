@@ -36,11 +36,11 @@ public class ProyectoInvestigacionController {
     }
 
     @PutMapping("/editar/{id}")
-    public ResponseEntity<Void> editarProyectoInvestigacion(
+    public ResponseEntity<Void> editProyectoInvestigacion(
             @PathVariable(name = "id") Long id,
             @RequestBody ProyectoInvestigacionRequestDto proyectoInvestigacionDto
                                               ) {
-        proyectoInvestigacionService.editarProyectoInvestigacion(id, proyectoInvestigacionDto);
+        proyectoInvestigacionService.editProyectoInvestigacion(id, proyectoInvestigacionDto);
         return ResponseEntity.ok().build();
     }
 

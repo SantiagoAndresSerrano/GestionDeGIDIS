@@ -88,7 +88,7 @@ async function registroProyecto() {
         body: JSON.stringify(data)
     }).then(() => {
                 alert("Proyecto Registrado Correctamente");
-                //window.location.href = 'viewProyectos.html';
+                window.location.href = 'viewProyectos.html';
     }).catch( err => {
             alert("Error de registro.");
         });

@@ -44,6 +44,24 @@ public class ProyectoInvestigacionServiceImpl implements ProyectoInvestigacionSe
     }
 
     @Override
+    public void editProyectoInvestigacion(Long id, ProyectoInvestigacionRequestDto proyectoInvestigacionDto) {
+        proyectoInvestigacionRepository.updateProyectoInvestigacion(
+                id,
+                proyectoInvestigacionDto.getTitulo(),
+                proyectoInvestigacionDto.getTipoProyecto(),
+                proyectoInvestigacionDto.getMesInicio(),
+                proyectoInvestigacionDto.getMesFin(),
+                proyectoInvestigacionDto.getAnioInicio(),
+                proyectoInvestigacionDto.getAnioFin(),
+                proyectoInvestigacionDto.isFinanciado(),
+                proyectoInvestigacionDto.getFuenteFinanciacion(),
+                proyectoInvestigacionDto.getAmbito(),
+                proyectoInvestigacionDto.getResumen(),
+                proyectoInvestigacionDto.getInstituciones()
+        );
+    }
+
+    @Override
     public ProyectoInvestigacion obtenerProyectoInvestigacionPorId(Long id) {
         return proyectoInvestigacionRepository.findById(id).get();
     }

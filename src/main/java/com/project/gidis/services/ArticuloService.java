@@ -11,5 +11,6 @@ public interface ArticuloService {
     void guardarArticulo(Articulo articulo) throws Exception;
     void borrarArticuloPorId(Long id);
     void editarArticulo(Long id, ArticuloRequestDto articuloDto);
+    void editArticulo(Long id, ArticuloRequestDto articuloDto);
     Articulo obtenerArticuloPorId(Long id);
 }

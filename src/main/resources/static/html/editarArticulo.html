@@ -42,12 +42,12 @@
     </nav>
 
     <!--Formulario-->
-    <div class="container">
+    <div class="container" id="editArticulo">
         <form action="/articulos/editarArticulo" method="POST" id="formulario">
                 <div class="form-group">
                 <label for="input">Coautores</label>
                 <input type="text" value="{{#each data2}}{{titulo}}{{/each}}" class="form-control" name="titulo" id="titulo" placeholder="Titulo" required>
-            </div>
+                </div>
 
             <!--Boton-->
             <br>
@@ -56,5 +56,5 @@
     </div>
 </div>
 </body>
-<!--script src="/js/guardarArt.js"></script-->
+<script src="../js/editarArticulo.js"></script>
 </html>

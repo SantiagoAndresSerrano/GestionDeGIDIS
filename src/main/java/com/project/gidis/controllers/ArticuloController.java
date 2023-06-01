@@ -41,11 +41,11 @@ public class ArticuloController {
     }
 
     @PutMapping("/editar/{id}")
-    public ResponseEntity<Void> editarArticulo(
+    public ResponseEntity<Void> editArticulo(
             @PathVariable(name = "id") Long id,
             @RequestBody ArticuloRequestDto articuloDto
                                               ) {
-        articuloService.editarArticulo(id, articuloDto);
+        articuloService.editArticulo(id, articuloDto);
         return ResponseEntity.ok().build();
     }
 

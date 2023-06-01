@@ -11,50 +11,95 @@ async function verArticulo(){
     })
     const res = await request.json();
     if(!res){
-        document.getElementById("tbody").innerHTML = "<td>No hay artículos disponibles</td>"
+        document.getElementById("articulo").innerHTML = "<td>No hay artículos disponibles</td>"
     }
     else{
         console.log(res)
-        document.getElementById("tbody").innerHTML = ""
-        for (let i = 0; i < res.length; i++){
-            let titulo = res[i].titulo
-            let ciudad = res[i].ciudad
-            let coautores = res[i].coautores
-            let digitalObjectIdentifierDOI = res[i].digitalObjectIdentifierDOI
-            let id = res[i].id
-
-            document.getElementById("tbody").innerHTML +=
-                ` <tr>
-        <td>${titulo}</td>
-        <td>${ciudad}</td>
-        <td>${coautores}</td>
-        <td>${digitalObjectIdentifierDOI}</td>
-        <td>
-          <div class="dropdown show">
-            <a class="btn dropdown-toggle" src="img/puntos.png" href="#" role="button" id="desplegable"
-              data-toggle="dropdown" aria-haspopup="true">
-              <img src="../img/puntos.png" class="align-right" height="30px" width="30px">
-            </a>
+        document.getElementById("articulo").innerHTML = ""
+            let titulo = res.titulo
+            let paginaInicial = res.paginaInicial
+            let paginaFinal = res.paginaFinal
+            let nombreRevista = res.nombreRevista
+            let tipoArticulo = res.tipoArticulo
+            let volumen = res.volumen
+            let fasciculoRevista = res.fasciculoRevista
+            let serieRevista = res.serieRevista
+            let ciudad = res.ciudad
+            let digitalObjectIdentifierDOI = res.digitalObjectIdentifierDOI
+            let medioDivulgacion = res.medioDivulgacion
+            let coautores = res.coautores
+            let idioma = res.idioma
 
 
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" data-toggle="modal" style="background-color:#FFFFFF" id="btn-abrir-popup3"
-                href="verArticulo.html">Ver</a>
-              <a class="dropdown-item" onclick="eliminarArticulo('${id}')" data-toggle="modal" style="background-color:#FFFFFF"
-                >Eliminar</a>
-              <a class="dropdown-item" onclick="editarArticulo('${id}')" data-toggle="modal" style="background-color:#FFFFFF" id="btn-abrir-popup2"
-                href="editarArticulo.html">Editar</a>
-              
-            </div>
-          </div>
-        </td>
-
-      </tr>
+            document.getElementById("articulo").innerHTML +=
+                ` <div class="form-group" id="prueba">
+            <label for="input"><b>Titulo del Articulo</b></label>
+            <p id="titulo" name="titulo">${titulo}</p>
+        </div>
+        <div class="form-group" id="prueba">
+            <label for="input"><b>Coautores </b></label>
+            <p id="coautores" name="coautores">${coautores}</p>
+        </div>
+        <div class="row">
+        <div class="form-group col-sm-4"id="prueba">
+            <label for="input"><b>Tipo Articulo </b></label>
+            <p id="tipoArticulo" name="tipoArticulo">${tipoArticulo}</p>
+        </div>
+        <div class="form-group col-sm-4"id="prueba">
+            <label for="input"><b>Ciudad </b></label>
+            <p id="ciudad" name="ciudad">${ciudad}</p>
+        </div>
+        </div>
+        
+        <div class="row">
+        <div class="form-group col-sm-3"id="prueba">
+            <label for="input"><b>Nombre Revista </b></label>
+            <p id="nombreRevista" name="nombreRevista">${nombreRevista}</p>
+        </div>
+        <div class="form-group col-sm-3"id="prueba">
+            <label for="input"><b>Fasciculo Revista</b></label>
+            <p id="fasciculoRevista" name="fasciculoRevista">${fasciculoRevista}</p>
+        </div>
+        <div class="form-group col-sm-3"id="prueba">
+            <label for="input"><b>Serie Revista </b></label>
+            <p id="serieRevista" name="serieRevista">${serieRevista}</p>
+        </div>
+        <div class="form-group col-sm-3"id="prueba">
+            <label for="input"><b>Volumen </b></label>
+            <p id="volumen" name="volumen">${volumen}</p>
+        </div>
+        </div>
+        
+        <div class="row">
+        <div class="form-group col-sm-4"id="prueba">
+            <label for="input"><b>Idioma </b></label>
+            <p id="idioma" name="idioma">${idioma}</p>
+        </div>
+        <div class="form-group col-sm-4"id="prueba">
+            <label for="input"><b>Medio Divulgación </b></label>
+            <p id="medioDivulgacion" name="medioDivulgacion">${medioDivulgacion}</p>            
+        </div>
+        <div class="form-group col-sm-4"id="prueba">
+            <label for="input"><b>DOI </b></label>
+            <p id="digitalObjectIdentifierDOI" name="digitalObjectIdentifierDOI">${digitalObjectIdentifierDOI}</p>            
+        </div>
+        </div>
+        
+        <div class="row">
+        <div class="form-group col-sm-4"id="prueba">
+            <label for="input"><b>Página Inicial </b></label>
+            <p id="paginaInicial" name="paginaInicial">${paginaInicial}</p>            
+        </div>
+        <div class="form-group col-sm-4"id="prueba">
+            <label for="input"><b>Página Final </b></label>
+            <p id="paginaFinal" name="paginaFinal">${paginaFinal}</p>            
+        </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" value="Ingresar" id="ingresar" >Descargar</button>
+        <br><br>       
         `
         }
-
-    }
 
 }
 verArticulo()

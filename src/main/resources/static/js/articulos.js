@@ -37,11 +37,11 @@ async function listarArticulos(){
 
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" data-toggle="modal" style="background-color:#FFFFFF" id="btn-abrir-popup3"
+                <a class="dropdown-item" onclick="verArt(${id})" data-toggle="modal" style="background-color:#FFFFFF" id="btn-abrir-popup3"
                 href="verArticulo.html?id=${id}">Ver</a>
               <a class="dropdown-item" onclick="eliminarArticulo('${id}')" data-toggle="modal" style="background-color:#FFFFFF"
                 >Eliminar</a>
-              <a class="dropdown-item" onclick="editarArticulo('${id}')" data-toggle="modal" style="background-color:#FFFFFF" id="btn-abrir-popup2"
+              <a class="dropdown-item" onclick="editarArt(${id})" data-toggle="modal" style="background-color:#FFFFFF" id="btn-abrir-popup2"
                 href="editarArticulo.html">Editar</a>
               
             </div>
@@ -54,6 +54,14 @@ async function listarArticulos(){
 
             }
 
+}
+
+function verArt(id){
+    window.location.href=`verArticulo.html?id=${id}`
+}
+
+function editarArt(id){
+    window.location.href=`editarArticulo.html?id=${id}`
 }
 
 listarArticulos()

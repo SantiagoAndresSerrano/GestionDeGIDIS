@@ -46,6 +46,26 @@ public class ArticuloServiceImpl implements ArticuloService {
     }
 
     @Override
+    public void editArticulo(Long id, ArticuloRequestDto articuloDto) {
+        articuloRepository.updateArticulo(
+                id,
+                articuloDto.getTitulo(),
+                articuloDto.getPaginaInicial(),
+                articuloDto.getPaginaFinal(),
+                articuloDto.getNombreRevista(),
+                articuloDto.getTipoArticulo(),
+                articuloDto.getVolumen(),
+                articuloDto.getFasciculoRevista(),
+                articuloDto.getSerieRevista(),
+                articuloDto.getCiudad(),
+                articuloDto.getDigitalObjectIdentifierDOI(),
+                articuloDto.getMedioDivulgacion(),
+                articuloDto.getCoautores(),
+                articuloDto.getIdioma()
+        );
+    }
+
+    @Override
     public Articulo obtenerArticuloPorId(Long id) {
         return articuloRepository.findById(id).get();
     }

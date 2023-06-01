@@ -42,6 +42,19 @@ public class LibroServiceImpl implements LibroService {
     }
 
     @Override
+    public void editLibro(Long id, LibroRequestDto libroDto) {
+        libroRepository.updateLibro(id,
+                libroDto.getIsbn(),
+                libroDto.getTitulo(),
+                libroDto.getLugarPublicacion(),
+                libroDto.getEditorial(),
+                libroDto.getDisciplina(),
+                libroDto.getCertificadoCreditos(),
+                libroDto.getCertificadoInstitucionAvala()
+                );
+    }
+
+    @Override
     public Libro obtenerLibroPorId(Long id) {
         return libroRepository.findById(id).get();
     }

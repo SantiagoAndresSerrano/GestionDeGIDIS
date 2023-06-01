@@ -36,11 +36,11 @@ public class LibroController {
     }
 
     @PutMapping("/editar/{id}")
-    public ResponseEntity<Void> editarLibro(
+    public ResponseEntity<Void> editLibro(
             @PathVariable(name = "id") Long id,
             @RequestBody LibroRequestDto libroDto
                                               ) {
-        libroService.editarLibro(id, libroDto);
+        libroService.editLibro(id, libroDto);
         return ResponseEntity.ok().build();
     }
 

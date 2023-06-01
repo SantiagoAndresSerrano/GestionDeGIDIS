@@ -11,5 +11,6 @@ public interface LibroService {
     void guardarLibro(Libro libro);
     void borrarLibroPorId(Long id);
     void editarLibro(Long id, LibroRequestDto libroDto);
+    void editLibro(Long id, LibroRequestDto libroDto);
     Libro obtenerLibroPorId(Long id);
 }

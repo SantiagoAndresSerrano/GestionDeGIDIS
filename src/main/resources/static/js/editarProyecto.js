@@ -99,7 +99,7 @@ async function verProyecto(){
             <div class="form-group">
                 <label for="input">Resumen</label>
                 <input type="text" class="form-control" value="${resumen}" name="resumen" id="resumen" placeholder="Resumen" required>
-            </div><br>
+                </div><br>
             <div class="row">
                 <div class="col-xd-12 col-sm-5">
                     <div class="form-group">

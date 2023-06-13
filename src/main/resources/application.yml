@@ -1,8 +1,21 @@
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/gidis
+#    username: root
+#    password: password
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#server:
+#  port: 8081
+
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/gidis
-    username: root
-    password: password
+    url: jdbc:mysql://bdqbehioglfkv3uqtxpo-mysql.services.clever-cloud.com/bdqbehioglfkv3uqtxpo
+    username: upmooge48uaaofji
+    password: EHeDr6rkQ0GcMNN82N6J
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:

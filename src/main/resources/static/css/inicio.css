@@ -19,7 +19,7 @@ html,body{
 }
 #cuerpo{
     
-    width: 50%;
+  width: 50%;
   height: auto;
   background-color: white;
   /* centrar vertical y horizontalmente */
@@ -29,6 +29,7 @@ html,body{
   margin: -25px 0 0 -25px;
   border-radius: 5%;
 }
+
 #art{
     margin-left: 25%;
 }
@@ -46,4 +47,11 @@ html,body{
 }
 #proyectos{
     margin-left: 25%;
+}
+
+#lib{
+    margin-left: 25%;
+}
+#libros{
+    margin-left: 30%;
 }

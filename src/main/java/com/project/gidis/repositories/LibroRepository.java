@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-@Repository
+
 public interface LibroRepository extends JpaRepository<Libro, Long> {
     @Modifying
     @Query("UPDATE Libro l SET " +

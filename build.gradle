@@ -35,6 +35,11 @@ test {
 	useJUnitPlatform()
 }
 
-springBoot {
-	mainClass = 'com.project.gidis'
+jar {
+	duplicatesStrategy = 'exclude' // Configuración para manejar duplicados
 }
+
+springBoot {
+	mainClass = 'com.project.gidis' // Reemplaza 'com.project.Application' con la clase principal de tu aplicación Spring Boot
+}
+

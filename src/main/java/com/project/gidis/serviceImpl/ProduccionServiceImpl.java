@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class  ProduccionServiceImpl implements ProduccionService {
     @Autowired
-    private final ProduccionRepository produccionRepository;
+    private ProduccionRepository produccionRepository;
 
     @Override
     public List<Produccion> obtenerProducciones() {

@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LibroServiceImpl implements LibroService {
     @Autowired
-    private final LibroRepository libroRepository;
+    private LibroRepository libroRepository;
 
     @Override
     public List<Libro> obtenerLibros() {

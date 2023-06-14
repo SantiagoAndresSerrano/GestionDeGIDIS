@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-@Repository
+
 public interface ArticuloRepository extends JpaRepository<Articulo, Long> {
     @Modifying
     @Query("UPDATE Articulo a SET " +

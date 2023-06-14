@@ -15,8 +15,8 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 public class ArticuloServiceImpl implements ArticuloService {
-    @Autowired
-    private ArticuloRepository articuloRepository;
+
+    public ArticuloRepository articuloRepository;
 
     @Override
     public List<Articulo> obtenerArticulos() {

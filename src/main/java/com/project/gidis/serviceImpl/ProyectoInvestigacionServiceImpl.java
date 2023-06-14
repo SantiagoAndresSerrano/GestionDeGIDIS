@@ -15,8 +15,8 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 public class ProyectoInvestigacionServiceImpl implements ProyectoInvestigacionService {
-    @Autowired
-    private ProyectoInvestigacionRepository proyectoInvestigacionRepository;
+
+    public ProyectoInvestigacionRepository proyectoInvestigacionRepository;
 
     @Override
     public List<ProyectoInvestigacion> obtenerProyectosInvestigacion() {

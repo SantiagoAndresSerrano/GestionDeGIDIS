@@ -19,8 +19,8 @@ import static com.project.gidis.util.Rol.DOCENTE;
 @Transactional
 @RequiredArgsConstructor
 public class UsuarioServiceImpl implements UsuarioService {
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+
+    public UsuarioRepository usuarioRepository;
 
     @Override
     public List<Usuario> obtenerUsuarios() {

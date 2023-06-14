@@ -15,8 +15,8 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 public class LibroServiceImpl implements LibroService {
-    @Autowired
-    private LibroRepository libroRepository;
+
+    public LibroRepository libroRepository;
 
     @Override
     public List<Libro> obtenerLibros() {

@@ -5,6 +5,7 @@ import com.project.gidis.entities.Libro;
 import com.project.gidis.repositories.LibroRepository;
 import com.project.gidis.services.LibroService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +15,7 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 public class LibroServiceImpl implements LibroService {
-
+    @Autowired
     private final LibroRepository libroRepository;
 
     @Override

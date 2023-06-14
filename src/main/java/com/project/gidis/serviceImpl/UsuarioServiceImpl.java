@@ -7,6 +7,7 @@ import com.project.gidis.repositories.UsuarioRepository;
 import com.project.gidis.services.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import net.bytebuddy.implementation.bytecode.Throw;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +19,7 @@ import static com.project.gidis.util.Rol.DOCENTE;
 @Transactional
 @RequiredArgsConstructor
 public class UsuarioServiceImpl implements UsuarioService {
-
+    @Autowired
     private final UsuarioRepository usuarioRepository;
 
     @Override

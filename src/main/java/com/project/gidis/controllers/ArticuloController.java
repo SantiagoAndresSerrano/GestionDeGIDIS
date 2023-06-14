@@ -5,6 +5,7 @@ import com.project.gidis.dto.RegistroResponseDto;
 import com.project.gidis.entities.Articulo;
 import com.project.gidis.serviceImpl.ArticuloServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ import java.util.List;
 @RequestMapping("/api/v1/articulo")
 @RequiredArgsConstructor
 public class ArticuloController {
-
+    @Autowired
     private final ArticuloServiceImpl articuloService;
 
     @GetMapping

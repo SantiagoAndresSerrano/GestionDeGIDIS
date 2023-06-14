@@ -5,6 +5,7 @@ import com.project.gidis.entities.ProyectoInvestigacion;
 import com.project.gidis.repositories.ProyectoInvestigacionRepository;
 import com.project.gidis.services.ProyectoInvestigacionService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +15,7 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 public class ProyectoInvestigacionServiceImpl implements ProyectoInvestigacionService {
-
+    @Autowired
     private final ProyectoInvestigacionRepository proyectoInvestigacionRepository;
 
     @Override

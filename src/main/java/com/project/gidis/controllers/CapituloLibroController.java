@@ -4,6 +4,7 @@ import com.project.gidis.dto.CapituloLibroRequestDto;
 import com.project.gidis.entities.CapituloLibro;
 import com.project.gidis.serviceImpl.CapituloLibroServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +14,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/capituloLibro")
 @RequiredArgsConstructor
-public class CapituloLibroController {
-
+public class   CapituloLibroController {
+    @Autowired
     private final CapituloLibroServiceImpl capituloLibroService;
 
     @GetMapping

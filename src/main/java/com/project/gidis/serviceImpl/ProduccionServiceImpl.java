@@ -5,6 +5,7 @@ import com.project.gidis.entities.Produccion;
 import com.project.gidis.repositories.ProduccionRepository;
 import com.project.gidis.services.ProduccionService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,8 +14,8 @@ import java.util.List;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class ProduccionServiceImpl implements ProduccionService {
-
+public class  ProduccionServiceImpl implements ProduccionService {
+    @Autowired
     private final ProduccionRepository produccionRepository;
 
     @Override

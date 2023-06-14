@@ -16,7 +16,6 @@ spring:
     url: jdbc:mysql://bdqbehioglfkv3uqtxpo-mysql.services.clever-cloud.com/bdqbehioglfkv3uqtxpo
     username: upmooge48uaaofji
     password: EHeDr6rkQ0GcMNN82N6J
-    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update

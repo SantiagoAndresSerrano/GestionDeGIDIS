@@ -2,12 +2,13 @@ package com.project.gidis.repositories;
 
 import com.project.gidis.entities.ProyectoInvestigacion;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-
+@EnableJpaRepositories
 public interface ProyectoInvestigacionRepository extends JpaRepository<ProyectoInvestigacion, Long> {
     @Modifying
     @Query("UPDATE ProyectoInvestigacion p SET " +
